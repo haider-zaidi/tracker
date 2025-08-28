@@ -162,6 +162,7 @@ exports.submitWorklogs = async (req, res) => {
     // Use createMany for better performance, or individual creates if you need the returned data
     try {
       // Option 1: Use createMany (faster, but doesn't return created records)
+      console.log("Data is: ",data);
       const result = await prisma.masterDatabase.createMany({
         data: data,
         skipDuplicates: true, // Optional: skip if duplicate entries exist
