@@ -109,8 +109,7 @@ export default function EmployeeDashboard() {
     setLoadingPast(true);
     setPastError(null);
     try {
-      // const { data } = await axios.get("/worklogs/recent", { params: { days: 7 } });
-      const { data } = await axios.get(`${API_URL}/worklogs/recent`, { params: { days: 7 } });
+      const { data } = await axios.get("/worklogs/recent", { params: { days: 7 } });
       if (data?.success && Array.isArray(data.rows)) {
         const mapped = data.rows.map((r) => ({
           id: r.id,
